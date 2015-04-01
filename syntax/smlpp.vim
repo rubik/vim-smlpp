@@ -12,7 +12,7 @@ elseif exists("b:current_syntax") && b:current_syntax == 'smlpp'
 endif
 
 syn match   smlHalt "#" display skipwhite
-syn keyword smlInstruction read write load store cmp
+syn keyword smlInstruction read write load store
 syn keyword smlArithmetic add sub mul div mod pow
 syn keyword smlMark jmpz jmpnz jmpneg jmppos jmp place
 
