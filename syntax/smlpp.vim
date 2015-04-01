@@ -11,9 +11,9 @@ elseif exists("b:current_syntax") && b:current_syntax == 'smlpp'
   finish
 endif
 
-syn match   smlInstruction "#" display skipwhite
-syn keyword smlInstruction read write load store add sub mul div mod pow cmp
-
+syn match   smlHalt "#" display skipwhite
+syn keyword smlInstruction read write load store cmp
+syn keyword smlArithmetic add sub mul div mod pow
 syn keyword smlMark jmpz jmpnz jmpneg jmppos jmp place
 
 if version >= 508 || !exists("did_smlpp_syn_inits")
@@ -25,8 +25,9 @@ if version >= 508 || !exists("did_smlpp_syn_inits")
   endif
 
     HiLink smlInstruction Statement
+    HiLink smlArithmetic Type
     HiLink smlMark PreProc
-    HiLink smlVar Constant
+    HiLink smlHalt Constant
   delcommand HiLink
 endif
 
